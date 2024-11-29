@@ -31,6 +31,8 @@ public class CarroService {
             throw new RuntimeException("A vaga já está ocupada!");
         } else {
             carro.setVaga(vaga);
+            vaga.setCarro(carro);
+            vaga.setOcupada(true);
             carroRepository.save(carro);
         }
     }
