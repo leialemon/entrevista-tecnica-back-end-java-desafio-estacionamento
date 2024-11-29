@@ -1,5 +1,6 @@
 package br.com.ada.estacionamento.carros;
 
+import br.com.ada.estacionamento.vagas.Vaga;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,8 +22,8 @@ public class CarroController {
     }
 
     @PostMapping
-    public ResponseEntity<Carro> estacionar(@RequestBody Carro carro){
-        service.estacionar(carro);
+    public ResponseEntity<Carro> estacionar(@RequestBody Carro carro, Vaga vaga){
+        service.estacionar(carro,vaga);
         return ResponseEntity.ok(carro);
     }
 
